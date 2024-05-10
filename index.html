@@ -3,17 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Prima della chiusura del tag </body> -->
-    <script src="script.js"></script>
+    <title>Ticket Form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 
 
-
-
 <body>
+
+    <header>
+        <h1> Ticket Generator </h1>
+    </header>
     
+
+
+    <main>
+
+        <div class="input-group">
+            <label for="userDistance">Trip distance in Km </label>
+            <input type="text" id="userDistance" name="userDistance">
+        </div>
+
+
+
+        <div class="input-group">
+            <label for="userAge">Age of the passanger </label>
+            <input type="text" id="userAge" name="userAge">
+        </div>
+
+
+
+        <button id="ticket-generator">Generate</button>
+
+
+        <section class="ticket">
+            <p> Discount for your group age is: <span id="discount-percentage">0%</span> </p>
+
+            <p> Your discount is: <span id="price-discount">0.00$</span> </p>
+            
+            <p> Your ticket price is: <span id="total-price">0.00$</span></p>
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+
+
+    <!-- collegare lo script java -->
+    <script src="script.js"></script>
 </body>
 </html>

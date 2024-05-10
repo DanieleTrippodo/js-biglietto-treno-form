@@ -1,35 +1,28 @@
+document.querySelector('#ticket-generator').addEventListener('click', function(){
+
+    const distance = Number.parseFloat(document.querySelector('input#user-distance'));
+    const age = Number.parseInt(document.querySelector('input#user-age'));
+
+    const discountPercentageEl = document.querySelector('input#user-age');
+    const PriceDiscountEl = document.querySelector('span#price-discount');
+    const totalPriceEl = document.querySelector('span#total-price');
+
+    const PricePerUnit = 0.267113;
+    let discount = 0;
+
+    if (age > 63){
+        discount = 37.8893;
+    } else if (age < 21){
+        discount = 24.552;
+    }
+
+    let total = (PricePerUnit * distance) - ((PricePerUnit * distance) / 100 * discount);
 
 
-// # Chiediamo all'utente le informazioni sul suo biglietto
-let Chilometri = parseInt(prompt("Quanti chilometri devi percorrere?"));
-let eta = parseInt(prompt("Quanti anni hai?"));
+    discountPercentageEl.innerHTML = discount + '%';
+    PriceDiscountEl.innerHTML = totaldiscount + '$';
+    totalPriceEl.innerHTML = total + '$';
 
+    console.log(total, totaldiscount);
 
-// # calcolare il prezzo del biglietto in base ai chilometri in centesimi
-let PrezzoBiglietto = Chilometri * 0.267113; 
-
-
-/* sconto Minorenni */
-const ScontoMinorenni = 24.552;
-const ScontoMinorenniPercentuale = ScontoMinorenni.toFixed(3);
-
-/* sconto Over65 */
-const ScontoOver65 = 37.893;
-const ScontoOver65Percentuale = ScontoOver65.toFixed(3);
-
-
-
-
-
-
-
-//# Controlliamo l'età dell'utente e Apllichiamo lo Sconto
-if (eta <= 18) {
-    console.log(PrezzoBiglietto / ScontoMinorenni * 100)
-    
-
-}else if(eta >= 65){
-    console.log(PrezzoBiglietto / ScontoOver65 * 100)
-}else{
-    console.log(PrezzoBiglietto.toFixed(4)) /* per restituire il prezzo totale */
-}
+});
